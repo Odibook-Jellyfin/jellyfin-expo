@@ -2,7 +2,10 @@
     "common": {
         "cancel": "Cancelar",
         "unknown": "Desconocido",
-        "ok": "OK"
+        "ok": "OK",
+        "beta": "BETA",
+        "edit": "Editar",
+        "delete": "Eliminar"
     },
     "headings": {
         "addServer": "Agregar servidor",
@@ -11,7 +14,8 @@
         "servers": "Servidores",
         "settings": "Configuración",
         "playback": "Reproducción",
-        "appearance": "Apariencia"
+        "appearance": "Apariencia",
+        "downloads": "Descargas"
     },
     "addServer": {
         "address": "servidorDirección del servidor",

@@ -1,87 +1,92 @@
 {
     "common": {
-        "cancel": "",
-        "ok": "",
-        "unknown": ""
+        "cancel": "ביטול",
+        "ok": "אישור",
+        "unknown": "לא ידוע",
+        "edit": "עריכה",
+        "delete": "מחיקה",
+        "beta": "BETA"
     },
     "headings": {
-        "addServer": "",
-        "appearance": "",
-        "home": "",
-        "links": "",
-        "playback": "",
-        "servers": "",
-        "settings": ""
+        "addServer": "הוספת שרת",
+        "appearance": "מראה",
+        "home": "ראשי",
+        "links": "קישורים",
+        "playback": "השמעה",
+        "servers": "שרתים",
+        "settings": "הגדרות",
+        "downloads": "הורדות"
     },
     "addServer": {
-        "address": "",
+        "address": "כתובת השרת",
         "validation": {
-            "empty": "",
-            "invalid": "",
-            "invalidProduct": "",
-            "noConnection": ""
+            "empty": "$t(addServer.address) לא יכול להיות ריק",
+            "invalid": "$t(addServer.address) לא תקין",
+            "invalidProduct": "לא שרת ג'ליפין",
+            "noConnection": "אי אפשר להתחבר לשרת"
         }
     },
     "home": {
         "errors": {
             "502": {
-                "description": ""
+                "description": "לא יכול להגיע לשרת ג'ליפין. זה בדרך כלל קורה מכיוון שיש שגיאה בהגדרת המתווך או שג'ליפין מנותק."
             },
             "504": {
-                "description": ""
+                "description": "לא ניתן להגיע לשרת ג'ליפין. זה בדרך כלל קורה כיוון שהחיבור למתווך לא צלח בעת ההתחברות לג'ליפין."
             },
             "http": {
-                "heading": "",
-                "description": ""
+                "heading": "משהו השתבש!",
+                "description": "שרת ג'ליפין החזיר שגיאה."
             },
             "invalidServer": {
-                "heading": "",
-                "description": ""
+                "heading": "השרת אינו תקין",
+                "description": "משהו התרחש והמידע השמור על השרת אינו חוקי. נסה להסיר את השרת מההגדרות ולהוסיף אותו בחזרה."
             },
             "offline": {
-                "heading": "",
-                "description": ""
+                "heading": "השרת במצב לא מקוון ?",
+                "description": "שגיאה ביצירת קשר עם שרת ג'ליפין."
             }
         },
-        "errorCode": "",
-        "errorUrl": "",
-        "retry": ""
+        "errorCode": "קוד שגיאה : {{errorCode}}",
+        "errorUrl": "כתובת אתר: {{url}}",
+        "retry": "לנסות שוב?"
     },
     "serverHelp": {
-        "heading": "",
-        "description": "",
-        "learnMore": ""
+        "heading": "מה זה ג'ליפין?",
+        "description": "ג'ליפין הוא פתרון המדיה שמבוסס על מאמצי מתנדבים. מאפשר לך לארח את המדיה שלך ולגשת אליה מכל מקום.\n\n\nכדי להשתמש בלקוח הזה, יש לארח שרת ג'ליפין משלך.",
+        "learnMore": "למד עוד על איך לארח שרת משלך"
     },
     "settings": {
-        "version": "",
-        "keepAwake": "",
-        "nativeVideoPlayer": "",
-        "minimumServerVersion": "",
-        "fmp4Support": "",
-        "lightTheme": "",
-        "systemTheme": "",
-        "rotationLock": "",
-        "tabLabels": "",
-        "expoVersion": ""
+        "version": "גרסא: {{version}}",
+        "keepAwake": "שמור על המסך ער",
+        "nativeVideoPlayer": "להשתמש בנגן מדיה מקורי",
+        "minimumServerVersion": "דורש שרת עם גרסה +10.7",
+        "fmp4Support": "להעדיף fMP4 ב־HLS",
+        "lightTheme": "השתמש בערכת נושא בהירה",
+        "systemTheme": "השתמש בערכת נושא המועדפת של המערכת",
+        "rotationLock": "נעילת סיבוב",
+        "tabLabels": "הצג",
+        "expoVersion": "גרסת Expo:‏ {{version}}"
     },
     "links": {
-        "website": "",
-        "documentation": "",
-        "source": "",
-        "translate": "",
+        "website": "אתר ג'ליפין",
+        "documentation": "תיעוד",
+        "source": "קוד מקור",
+        "translate": "תרגם",
         "feature": "",
-        "issue": ""
+        "issue": "דווח על בעיה",
+        "help": "קבלת עזרה"
     },
     "alerts": {
         "deleteServer": {
-            "title": "",
-            "description": "",
-            "confirm": ""
+            "title": "מחק שרת",
+            "description": "האם אתה בטוח שברצונך למחוק את השרת {{serverName}}?",
+            "confirm": "מחק"
         },
         "resetApplication": {
-            "title": "",
-            "description": "",
-            "confirm": ""
+            "title": "אפס את האפליקציה",
+            "description": "האם אתה בטוח שברצונך לאפס את כל ההגדרות?",
+            "confirm": "אפס"
         }
     }
 }

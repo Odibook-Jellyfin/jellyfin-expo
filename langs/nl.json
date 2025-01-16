@@ -2,7 +2,10 @@
     "common": {
         "cancel": "Annuleren",
         "unknown": "Onbekend",
-        "ok": "OK"
+        "ok": "OK",
+        "beta": "BETA",
+        "edit": "Bewerken",
+        "delete": "Wissen"
     },
     "headings": {
         "addServer": "Server toevoegen",
@@ -11,7 +14,8 @@
         "servers": "Servers",
         "settings": "Instellingen",
         "playback": "Afspelen",
-        "appearance": "Uiterlijk"
+        "appearance": "Uiterlijk",
+        "downloads": "Downloads"
     },
     "addServer": {
         "address": "Serveradres",
@@ -51,22 +55,23 @@
     "settings": {
         "version": "Versie: {{version}}",
         "keepAwake": "Houd het scherm aan",
-        "rotationLock": "Vergrendel Schermrotatie",
-        "expoVersion": "Expo Versie: {{version}}",
-        "lightTheme": "Gebruik Lichte Modus",
-        "tabLabels": "Toon Tabblad Labels",
-        "systemTheme": "Gebruik systeem thema",
-        "minimumServerVersion": "Vereist Server Versie 10.7+",
-        "nativeVideoPlayer": "Gebruik Originele Videospeler",
-        "fmp4Support": "Verkies fMP4 in HLS"
+        "rotationLock": "Rotatievergrendeling",
+        "expoVersion": "Expo-versie: {{version}}",
+        "lightTheme": "Gebruik licht thema",
+        "tabLabels": "Toon tabblad labels",
+        "systemTheme": "Gebruik systeemthema",
+        "minimumServerVersion": "Vereist serverversie 10.7+",
+        "nativeVideoPlayer": "Gebruik originele videospeler",
+        "fmp4Support": "Prefereer fMP4 in HLS"
     },
     "links": {
-        "website": "Jellyfin Website",
+        "website": "Jellyfin-website",
         "documentation": "Documentatie",
         "source": "Broncode",
         "translate": "Vertalen",
         "feature": "Verzoek nieuwe functionaliteit",
-        "issue": "Rapporteer een probleem"
+        "issue": "Rapporteer een probleem",
+        "help": "Hulp krijgen"
     },
     "alerts": {
         "deleteServer": {
@@ -82,7 +87,7 @@
     },
     "serverHelp": {
         "learnMore": "Leer meer over hoe je een eigen server kan hosten",
-        "description": "Jellyfin is de vrijwillig-gebouwde media oplossing. Het maakt het mogelijk om je eigen media content te hosten en vanaf overal te bereiken.\n\n\nOm deze client te kunnen gebruiken, moet je een eigen Jellyfin server hosten.",
+        "description": "Jellyfin is de door vrijwilligers gebouwde media-oplossing. Het maakt het mogelijk om je eigen media-inhoud te hosten en vanaf overal te bereiken.\n\n\nOm deze client te kunnen gebruiken, moet je een eigen Jellyfin server hosten.",
         "heading": "Wat is Jellyfin?"
     }
 }

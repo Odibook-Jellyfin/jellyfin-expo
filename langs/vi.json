@@ -2,7 +2,10 @@
     "common": {
         "cancel": "Huỷ bỏ",
         "ok": "Đồng ý",
-        "unknown": "Không xác định"
+        "unknown": "Không xác định",
+        "delete": "Xoá",
+        "beta": "Bản thử nghiệm",
+        "edit": "Sửa"
     },
     "headings": {
         "addServer": "Thêm Máy Chủ",
@@ -11,7 +14,8 @@
         "links": "Liên kết",
         "playback": "Phát lại",
         "servers": "Máy chủ",
-        "settings": "Cài đặt"
+        "settings": "Cài đặt",
+        "downloads": "Tải xuống"
     },
     "addServer": {
         "address": "Địa Chỉ Máy Chủ",
@@ -44,7 +48,7 @@
             }
         },
         "errorCode": "Mã lỗi: {{errorCode}}",
-        "errorUrl": "",
+        "errorUrl": "URL: {{url}}",
         "retry": "Thử lại?"
     },
     "serverHelp": {
@@ -57,7 +61,7 @@
         "keepAwake": "Giữ Màn Hình Tỉnh Táo",
         "nativeVideoPlayer": "Sử Dụng Trình Phát Video Gốc",
         "minimumServerVersion": "Yêu Cầu Phiên Bản Máy Chủ 10.7+",
-        "fmp4Support": "",
+        "fmp4Support": "Chọn fMP4 cho HLS",
         "lightTheme": "Dùng Chủ Đề Sáng",
         "systemTheme": "Sử Dụng Chủ Đề Hệ Thống",
         "rotationLock": "Khóa Xoay",

@@ -1,0 +1,90 @@
+{
+    "common": {
+        "beta": "BETA",
+        "cancel": "Atšaukti",
+        "delete": "Ištrinti",
+        "edit": "Redaguoti",
+        "ok": "OK",
+        "unknown": "Nežinomas"
+    },
+    "headings": {
+        "addServer": "Pridėti Serverį",
+        "appearance": "Išvaizda",
+        "downloads": "Atsiuntimai",
+        "home": "Pagrindinis",
+        "links": "Nuorodos",
+        "playback": "Atkūrimas",
+        "servers": "Serveriai",
+        "settings": "Nustatymai"
+    },
+    "addServer": {
+        "address": "Serverio Adresas",
+        "validation": {
+            "empty": "$t(addServer.address) negali būti tuščias",
+            "invalid": "$t(addServer.address) yra netinkamas",
+            "invalidProduct": "Ne Jellyfin serveris",
+            "noConnection": "Nepavyko prisijungti prie serverio"
+        }
+    },
+    "home": {
+        "errors": {
+            "502": {
+                "description": "Nepavyko pasiekti Jellyfin serverio. Tai dažniausiai nutinka dėl tarpinio serverio konfigūracijos klaidos arba nes Jellyfin nėra paleista."
+            },
+            "504": {
+                "description": "Nepavyko pasiekti Jellyfin serverio. Tai dažniausiai nutinka nes baigėsi tarpinio serverio laikas skirtas prisijungti prie Jellyfin."
+            },
+            "http": {
+                "heading": "Kažkas nutiko ne taip!",
+                "description": "Jellyfin serveris gražino klaidą."
+            },
+            "invalidServer": {
+                "heading": "Serveris netinkamas",
+                "description": "Kažkas ne taip nutiko ir išsaugota serverio informacija yra netinkama. Pabandykite Nustatymuose pašalinti serverį ir pridėti jį iš naujo."
+            },
+            "offline": {
+                "heading": "Serveris išjungtas?",
+                "description": "Klaida bandant pasiekti Jellyfin serverį."
+            }
+        },
+        "errorCode": "Klaidos kodas: {{errorCode}}",
+        "errorUrl": "Adresas: {{url}}",
+        "retry": "Bandyti iš naujo?"
+    },
+    "serverHelp": {
+        "heading": "Kas yra Jellyfin?",
+        "description": "",
+        "learnMore": "Sužinokite daugiau kaip pasileisti savo serverį"
+    },
+    "settings": {
+        "version": "Versija: {{version}}",
+        "keepAwake": "Neleisti ekranui užmigti",
+        "nativeVideoPlayer": "Naudoti numatytą vaizdo grotuvą",
+        "minimumServerVersion": "Reikalinga Serverio Versija 10.7+",
+        "fmp4Support": "",
+        "lightTheme": "Naudoti šviesią temą",
+        "systemTheme": "Naudoti Sisteminę temą",
+        "rotationLock": "Neleisti apsiversti",
+        "tabLabels": "Rodyti Skilčių Etiketes",
+        "expoVersion": "Expo Versija: {{version}}"
+    },
+    "links": {
+        "website": "Jellyfin Tinklalapis",
+        "documentation": "Dokumentacija",
+        "source": "Išnašų kodas",
+        "translate": "Išversti",
+        "issue": "Pranešti apie problemą"
+    },
+    "alerts": {
+        "deleteServer": {
+            "title": "Ištrinti serverį",
+            "description": "Ar tikrai nori ištrinti serverį {{serverName}}?",
+            "confirm": "Ištrinti"
+        },
+        "resetApplication": {
+            "title": "Nustatyti aplikaciją iš naujo",
+            "description": "Ar jūs tikrai norite nustatyti visus nustatymus iš naujo?",
+            "confirm": "Atstatyti"
+        }
+    }
+}

@@ -21,7 +21,7 @@ describe('ServerValidator', () => {
 		});
 
 		it('should throw an error if hostname is invalid', () => {
-			expect(() => parseUrl('/')).toThrow('Invalid URL: /');
+			expect(() => parseUrl('/')).toThrow('Invalid URL');
 		});
 
 		it('should default to http protocol if not specified', () => {
@@ -92,13 +92,6 @@ describe('ServerValidator', () => {
 			const result = await validateServer();
 			expect(result.isValid).toBe(false);
 			expect(result.message).toBe('invalid');
-		});
-
-		it('should return valid for 10.2.x servers', async () => {
-			fetch.mockResponse(JSON.stringify({ Id: 'test', Version: '10.2.0' }));
-
-			const result = await validateServer({ url: new URL('https://foobar/') });
-			expect(result.isValid).toBe(true);
 		});
 
 		it('should return valid if product name is "Jellyfin Server"', async () => {

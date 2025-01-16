@@ -6,6 +6,8 @@
 
 import normalizeUrl from 'normalize-url';
 
+import { fetchWithTimeout } from './Fetch';
+
 const TIMEOUT_DURATION = 5000; // timeout request after 5s
 
 export const parseUrl = (host = '', port = '') => {
@@ -31,24 +33,13 @@ export const fetchServerInfo = async (server = {}) => {
 	const infoUrl = `${serverUrl}system/info/public`;
 	console.log('info url', infoUrl);
 
-	// Try to fetch the server's public info
-	const controller = new AbortController();
-	const { signal } = controller;
-
-	const request = fetch(infoUrl, { signal });
-
-	const timeoutId = setTimeout(() => {
-		console.log('request timed out, aborting');
-		controller.abort();
-	}, TIMEOUT_DURATION);
-
-	const responseJson = await request.then(response => {
-		clearTimeout(timeoutId);
-		if (!response.ok) {
-			throw new Error(`Error response status [${response.status}] received from ${infoUrl}`);
-		}
-		return response.json();
-	});
+	const responseJson = await fetchWithTimeout(infoUrl, TIMEOUT_DURATION)
+		.then(response => {
+			if (!response.ok) {
+				throw new Error(`Error response status [${response.status}] received from ${infoUrl}`);
+			}
+			return response.json();
+		});
 	console.log('response', responseJson);
 
 	return responseJson;
@@ -88,18 +79,6 @@ export const validateServer = async (server = {}) => {
 
 	try {
 		const responseJson = await fetchServerInfo(server);
-
-		// Versions prior to 10.3.x do not include ProductName so return true if response
-		// includes Version < 10.3.x and has an Id
-		if (responseJson.Version) {
-			const versionNumber = responseJson.Version.split('.').map(num => Number.parseInt(num, 10));
-			if (versionNumber.length === 3 && versionNumber[0] === 10 && versionNumber[1] < 3) {
-				const isValid = responseJson.Id?.length > 0;
-				console.log('Is valid old version', isValid);
-				return { isValid };
-			}
-		}
-
 		const isValid = responseJson.ProductName === 'Jellyfin Server';
 		const answer = {
 			isValid

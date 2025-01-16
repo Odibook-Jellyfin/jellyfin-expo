@@ -3,16 +3,19 @@
         "beta": "BETA",
         "cancel": "Cancelar",
         "ok": "OK",
-        "unknown": "Desconhecido"
+        "unknown": "Desconhecido",
+        "delete": "Eliminar",
+        "edit": "Editar"
     },
     "headings": {
-        "addServer": "Adicionar Servidor",
+        "addServer": "Adicionar servidor",
         "appearance": "Aparência",
         "home": "Início",
         "links": "Links",
         "playback": "Reprodução",
         "servers": "Servidores",
-        "settings": "Definições"
+        "settings": "Definições",
+        "downloads": "Transferências"
     },
     "addServer": {
         "address": "Endereço do Servidor",
@@ -70,7 +73,8 @@
         "documentation": "Documentação",
         "source": "Código Fonte",
         "translate": "Traduzir",
-        "issue": "Relatar um problema"
+        "issue": "Relatar um problema",
+        "help": "Obter ajuda"
     },
     "alerts": {
         "deleteServer": {

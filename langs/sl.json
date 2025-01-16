@@ -2,7 +2,10 @@
     "common": {
         "cancel": "Prekliči",
         "unknown": "Neznano",
-        "ok": "V redu"
+        "ok": "V redu",
+        "beta": "BETA",
+        "edit": "Uredi",
+        "delete": "Izbriši"
     },
     "headings": {
         "addServer": "Dodaj strežnik",
@@ -11,7 +14,8 @@
         "servers": "Strežniki",
         "settings": "Nastavitve",
         "playback": "Predvajanje",
-        "appearance": "Izgled"
+        "appearance": "Izgled",
+        "downloads": "Prenosi"
     },
     "addServer": {
         "address": "Naslov strežnika",

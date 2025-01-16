@@ -8,22 +8,32 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { observer } from 'mobx-react-lite';
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Platform } from 'react-native';
 import { ThemeContext } from 'react-native-elements';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import Screens from '../constants/Screens';
 import { useStores } from '../hooks/useStores';
+import DownloadScreen from '../screens/DownloadScreen';
 import { getIconName } from '../utils/Icons';
 
 import HomeNavigator from './HomeNavigator';
 import SettingsNavigator from './SettingsNavigator';
 
-function TabIcon(routeName, color, size) {
+function TabIcon(routeName, focused, color, size) {
 	let iconName = null;
 	if (routeName === Screens.HomeTab) {
-		iconName = getIconName('tv-outline');
+		iconName = getIconName('tv');
+	} else if (routeName === Screens.DownloadsTab) {
+		iconName = 'download';
 	} else if (routeName === Screens.SettingsTab) {
-		iconName = getIconName('cog-outline');
+		iconName = getIconName('cog');
+	} else {
+		iconName = 'help-circle';
+	}
+
+	if (!focused) {
+		iconName += '-outline';
 	}
 
 	return (
@@ -45,7 +55,7 @@ const TabNavigator = observer(() => {
 		tabBarStyle.display = 'none';
 	}
 	// Use a smaller height for the tab bar when labels are disabled
-	if (!rootStore.settingStore.isTabLabelsEnabled) {
+	if (!rootStore.settingStore.isTabLabelsEnabled && !Platform.isPad) {
 		tabBarStyle.height = insets.bottom + 28;
 	}
 
@@ -53,7 +63,7 @@ const TabNavigator = observer(() => {
 		<Tab.Navigator
 			screenOptions={({ route }) => ({
 				headerShown: false,
-				tabBarIcon: ({ color, size }) => TabIcon(route.name, color, size),
+				tabBarIcon: ({ focused, color, size }) => TabIcon(route.name, focused, color, size),
 				tabBarInactiveTintColor: theme.colors.grey1,
 				tabBarShowLabel: rootStore.settingStore.isTabLabelsEnabled,
 				tabBarStyle
@@ -66,6 +76,17 @@ const TabNavigator = observer(() => {
 					title: t('headings.home')
 				}}
 			/>
+			{rootStore.settingStore.isExperimentalDownloadsEnabled && (
+				<Tab.Screen
+					name={Screens.DownloadsTab}
+					component={DownloadScreen}
+					options={{
+						title: t('headings.downloads'),
+						headerShown: true,
+						tabBarBadge: rootStore.downloadStore.newDownloadCount > 0 ? rootStore.downloadStore.newDownloadCount : null
+					}}
+				/>
+			)}
 			<Tab.Screen
 				name={Screens.SettingsTab}
 				component={SettingsNavigator}

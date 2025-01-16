@@ -1,87 +1,92 @@
 {
     "common": {
-        "cancel": "",
-        "ok": "",
-        "unknown": ""
+        "cancel": "İptal",
+        "ok": "Tamam",
+        "unknown": "Bilinmeyen",
+        "beta": "BETA",
+        "edit": "Düzenle",
+        "delete": "Sil"
     },
     "headings": {
-        "addServer": "",
-        "appearance": "",
-        "home": "",
-        "links": "",
-        "playback": "",
-        "servers": "",
-        "settings": ""
+        "addServer": "Sunucu Ekle",
+        "appearance": "Görünüm",
+        "home": "Ana Ekran",
+        "links": "Linkler",
+        "playback": "Oynatma",
+        "servers": "Sunucular",
+        "settings": "Ayarlar",
+        "downloads": "İndirmeler"
     },
     "addServer": {
-        "address": "",
+        "address": "Sunucu Adresi",
         "validation": {
-            "empty": "",
-            "invalid": "",
-            "invalidProduct": "",
-            "noConnection": ""
+            "empty": "$t(addServer.address) boş olamaz",
+            "invalid": "$t(addServer.address) geçersiz",
+            "invalidProduct": "Jellyfin sunucusu değil",
+            "noConnection": "Sunucuya bağlanılamadı"
         }
     },
     "home": {
         "errors": {
             "502": {
-                "description": ""
+                "description": "Jellyfin sunucusuna ulaşılamıyor. Bunun nedeni genellikle bir proxy yapılandırma hatasıdır veya Jellyfin çevrimdışıdır."
             },
             "504": {
-                "description": ""
+                "description": "Jellyfin sunucusuna ulaşılamıyor. Bunun nedeni genellikle proxy'nin Jellyfin'e bağlanırken zaman aşımına uğramasıdır."
             },
             "http": {
-                "heading": "",
-                "description": ""
+                "heading": "Bir sorun oluştu!",
+                "description": "Jellyfin sunucusu hata verdi."
             },
             "invalidServer": {
-                "heading": "",
-                "description": ""
+                "heading": "Sunucu geçersiz",
+                "description": "Bir şey oldu ve kaydedilen sunucu bilgileri geçersiz. Sunucuyu Ayarlar'dan kaldırmayı ve tekrar eklemeyi deneyin."
             },
             "offline": {
-                "heading": "",
-                "description": ""
+                "heading": "Sunucu çevrimdışı mı?",
+                "description": "Jellyfin sunucusuyla bağlantı kurulurken hata oluştu."
             }
         },
-        "errorCode": "",
-        "errorUrl": "",
-        "retry": ""
+        "errorCode": "Hata kodu: {{errorCode}}",
+        "errorUrl": "URL: {{url}}",
+        "retry": "Tekrar deneyin?"
     },
     "serverHelp": {
-        "heading": "",
-        "description": "",
-        "learnMore": ""
+        "heading": "Jellyfin nedir?",
+        "description": "Jellyfin, gönüllü olarak oluşturulmuş medya çözümüdür. Kendi medyanızı barındırmanıza ve her yerden erişmenize olanak tanır.\n\n\nBu istemciyi kullanmak için kendi Jellyfin sunucunuzu barındırmanız gerekir.",
+        "learnMore": "Kendi sunucunuzu nasıl yaratacağınız hakkında daha fazla bilgi edinin"
     },
     "settings": {
-        "version": "",
-        "keepAwake": "",
-        "nativeVideoPlayer": "",
-        "minimumServerVersion": "",
-        "fmp4Support": "",
-        "lightTheme": "",
-        "systemTheme": "",
-        "rotationLock": "",
-        "tabLabels": "",
-        "expoVersion": ""
+        "version": "Sürüm: {{version}}",
+        "keepAwake": "Ekranı Açık Tut",
+        "nativeVideoPlayer": "Dahili Video Oynatıcıyı Kullan",
+        "minimumServerVersion": "Sunucu Sürümü 10.7+ gerektirir",
+        "fmp4Support": "HLS'de fMP4'ü tercih edin",
+        "lightTheme": "Açık Renkli Temayı Kullan",
+        "systemTheme": "Sistem Temasını Kullan",
+        "rotationLock": "Döndürme Kilidi",
+        "tabLabels": "Sekme Etiketlerini Göster",
+        "expoVersion": "Expo Sürümü: {{version}}"
     },
     "links": {
-        "website": "",
-        "documentation": "",
-        "source": "",
-        "translate": "",
+        "website": "Jellyfin Web Sitesi",
+        "documentation": "Belgeler",
+        "source": "Kaynak Kodu",
+        "translate": "Çevir",
         "feature": "",
-        "issue": ""
+        "issue": "Sorun Bildir",
+        "help": "Yardım Alma"
     },
     "alerts": {
         "deleteServer": {
-            "title": "",
-            "description": "",
-            "confirm": ""
+            "title": "Sunucuyu Sil",
+            "description": "{{serverName}} sunucusunu silmek istediğinizden emin misiniz?",
+            "confirm": "Sil"
         },
         "resetApplication": {
-            "title": "",
-            "description": "",
-            "confirm": ""
+            "title": "Uygulamayı Sıfırla",
+            "description": "Tüm ayarları sıfırlamak istediğinizden emin misiniz?",
+            "confirm": "Sıfırla"
         }
     }
 }

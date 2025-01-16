@@ -3,7 +3,9 @@
         "cancel": "Zrušiť",
         "unknown": "Neznáme",
         "ok": "OK",
-        "beta": "BETA"
+        "beta": "BETA",
+        "edit": "Upraviť",
+        "delete": "Vymazať"
     },
     "headings": {
         "addServer": "Pridať server",
@@ -12,7 +14,8 @@
         "servers": "Servery",
         "settings": "Nastavenia",
         "playback": "Prehrávanie",
-        "appearance": "Vzhľad"
+        "appearance": "Vzhľad",
+        "downloads": "Stiahnuté"
     },
     "addServer": {
         "address": "Adresa serveru",
@@ -67,7 +70,8 @@
         "source": "Zdrojový kód",
         "feature": "Vyžiadať funkciu",
         "issue": "Nahlásiť problém",
-        "translate": "Preložiť"
+        "translate": "Preložiť",
+        "help": "Získať pomoc"
     },
     "alerts": {
         "deleteServer": {

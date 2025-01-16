@@ -3,7 +3,9 @@
         "cancel": "取消",
         "unknown": "未知",
         "ok": "确定",
-        "beta": "BETA"
+        "beta": "BETA",
+        "edit": "编辑",
+        "delete": "删除"
     },
     "headings": {
         "addServer": "添加服务器",
@@ -12,7 +14,8 @@
         "servers": "服务器",
         "settings": "设置",
         "playback": "播放",
-        "appearance": "外观"
+        "appearance": "外观",
+        "downloads": "下载"
     },
     "addServer": {
         "address": "服务器地址",
@@ -53,7 +56,7 @@
         "version": "版本号：{{version}}",
         "keepAwake": "保持屏幕常亮",
         "rotationLock": "旋转锁定",
-        "expoVersion": "客户端版本号：{{version}}",
+        "expoVersion": "Expo 版本：{{version}}",
         "tabLabels": "显示导航栏图标名称",
         "lightTheme": "使用浅色主题",
         "systemTheme": "使用系统主题",
@@ -67,7 +70,8 @@
         "source": "源代码",
         "feature": "功能请求",
         "issue": "报告问题",
-        "translate": "翻译"
+        "translate": "翻译",
+        "help": "获取帮助"
     },
     "alerts": {
         "deleteServer": {

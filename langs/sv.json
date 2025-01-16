@@ -2,7 +2,10 @@
     "common": {
         "cancel": "Avbryt",
         "unknown": "Okänd",
-        "ok": "OK"
+        "ok": "OK",
+        "beta": "BETA",
+        "edit": "Redigera",
+        "delete": "Radera"
     },
     "headings": {
         "addServer": "Lägg till server",
@@ -11,7 +14,8 @@
         "servers": "Servrar",
         "settings": "Inställningar",
         "playback": "Uppspelning",
-        "appearance": "Utseende"
+        "appearance": "Utseende",
+        "downloads": "Nedladdningar"
     },
     "addServer": {
         "address": "Serveradress",
@@ -55,18 +59,19 @@
         "expoVersion": "Expoversion: {{version}}",
         "minimumServerVersion": "Kräver serverversion 10.7+",
         "tabLabels": "Visa fliketiketter",
-        "systemTheme": "Andvänd systemtema",
+        "systemTheme": "Använd systemtema",
         "lightTheme": "Använd ljust tema",
         "fmp4Support": "Föredra fMP4 i HLS",
         "nativeVideoPlayer": "Använd inbyggd videospelare"
     },
     "links": {
-        "website": "Jellyfins Hemsida",
+        "website": "Jellyfins hemsida",
         "documentation": "Dokumentation",
         "source": "Källkod",
         "feature": "Föreslå en funktion",
         "issue": "Rapportera ett problem",
-        "translate": "Översätt"
+        "translate": "Översätt",
+        "help": "Så får du hjälp"
     },
     "alerts": {
         "deleteServer": {

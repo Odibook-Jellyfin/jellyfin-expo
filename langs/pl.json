@@ -2,19 +2,23 @@
     "common": {
         "cancel": "Anuluj",
         "unknown": "Nieznane",
-        "ok": "OK"
+        "ok": "OK",
+        "beta": "Wersja Beta",
+        "edit": "Edytuj",
+        "delete": "Usuń"
     },
     "headings": {
-        "addServer": "Dodaj Serwer",
+        "addServer": "Dodaj serwer",
         "home": "Start",
         "links": "Linki",
         "servers": "Serwery",
         "settings": "Ustawienia",
         "playback": "Odtwarzaj",
-        "appearance": "Wygląd"
+        "appearance": "Wygląd",
+        "downloads": "Pobrane"
     },
     "addServer": {
-        "address": "Adres Serwera",
+        "address": "Adres serwera",
         "validation": {
             "empty": "$t(addServer.address) nie może być pusty",
             "invalid": "$t(addServer.address) jest nieprawidłowy",
@@ -56,7 +60,7 @@
         "tabLabels": "Pokaż etykiety kart",
         "lightTheme": "Użyj jasnego motywu",
         "systemTheme": "Użyj motywu systemowego",
-        "minimumServerVersion": "Wymaga Serwer Wersji 10.7+",
+        "minimumServerVersion": "Wymaga serwera w wersji 10.7+",
         "nativeVideoPlayer": "Użyj natywnego odtwarzacza wideo",
         "fmp4Support": "Preferowane fMP4 w HLS"
     },
@@ -66,11 +70,12 @@
         "source": "Kod źródłowy",
         "translate": "Tłumacz",
         "feature": "Zaproponuj nową funkcję",
-        "issue": "Zgłoś błąd"
+        "issue": "Zgłoś błąd",
+        "help": "Uzyskiwanie pomocy"
     },
     "alerts": {
         "deleteServer": {
-            "title": "Usuń Serwer",
+            "title": "Usuń serwer",
             "description": "Na pewno chcesz usunąć serwer {{serverName}}?",
             "confirm": "Usuń"
         },

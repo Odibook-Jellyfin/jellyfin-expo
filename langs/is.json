@@ -1,0 +1,90 @@
+{
+    "common": {
+        "beta": "BETA",
+        "cancel": "Hætta við",
+        "delete": "Eyða",
+        "edit": "Breyta",
+        "ok": "OK",
+        "unknown": "Óþekkt"
+    },
+    "headings": {
+        "addServer": "Bæta við þjón",
+        "appearance": "Útlit",
+        "downloads": "Niðurhöl",
+        "home": "Heim",
+        "links": "Hlekkir",
+        "playback": "Endurspilun",
+        "servers": "Þjónar",
+        "settings": "Stillingar"
+    },
+    "addServer": {
+        "address": "Slóð á þjón",
+        "validation": {
+            "empty": "$t(addServer.address) má ekki vera tóm",
+            "invalid": "$t(addServer.address) er ógild",
+            "invalidProduct": "Ekki Jellyfin þjónn",
+            "noConnection": "Náði ekki sambandi við þjón"
+        }
+    },
+    "home": {
+        "errors": {
+            "502": {
+                "description": "Náði ekki sambandi við Jellifyn þjón. Þetta stafar yfirleitt af villu í uppsetningu á miðlara eða slökkt er á Jellyfin."
+            },
+            "504": {
+                "description": ""
+            },
+            "http": {
+                "heading": "Eitthvað fór úrskeiðis!",
+                "description": "Jellyfin vefþjóninn skilaði villu."
+            },
+            "invalidServer": {
+                "heading": "",
+                "description": ""
+            },
+            "offline": {
+                "heading": "Slökkt á vefþjón?",
+                "description": ""
+            }
+        },
+        "errorCode": "Villukóði: {{errorCode}}",
+        "errorUrl": "",
+        "retry": "Reyna aftur?"
+    },
+    "serverHelp": {
+        "heading": "",
+        "description": "",
+        "learnMore": ""
+    },
+    "settings": {
+        "version": "",
+        "keepAwake": "",
+        "nativeVideoPlayer": "",
+        "minimumServerVersion": "",
+        "fmp4Support": "",
+        "lightTheme": "",
+        "systemTheme": "",
+        "rotationLock": "",
+        "tabLabels": "",
+        "expoVersion": ""
+    },
+    "links": {
+        "website": "",
+        "documentation": "",
+        "source": "",
+        "translate": "",
+        "issue": ""
+    },
+    "alerts": {
+        "deleteServer": {
+            "title": "",
+            "description": "",
+            "confirm": ""
+        },
+        "resetApplication": {
+            "title": "",
+            "description": "",
+            "confirm": ""
+        }
+    }
+}

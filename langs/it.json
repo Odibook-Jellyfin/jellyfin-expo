@@ -3,16 +3,19 @@
         "cancel": "Annulla",
         "unknown": "Sconosciuto",
         "ok": "OK",
-        "beta": "BETA"
+        "beta": "BETA",
+        "edit": "Modifica",
+        "delete": "Elimina"
     },
     "headings": {
         "addServer": "Aggiungi server",
-        "home": "Inizio",
+        "home": "Home",
         "links": "Collegamenti",
         "servers": "Server",
         "settings": "Impostazioni",
         "appearance": "Aspetto",
-        "playback": "Riproduzione"
+        "playback": "Riproduzione",
+        "downloads": "Scaricati"
     },
     "addServer": {
         "address": "Indirizzo Del Server",
@@ -67,7 +70,8 @@
         "source": "Codice Sorgente",
         "feature": "Richiedere una Funzionalità",
         "issue": "Segnala un Problema",
-        "translate": "Traduci"
+        "translate": "Traduci",
+        "help": "Richiedere Aiuto"
     },
     "alerts": {
         "deleteServer": {

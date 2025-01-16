@@ -1,81 +1,92 @@
 {
     "common": {
         "cancel": "الغاء",
-        "unknown": "مجهول",
-        "ok": "حسنا"
+        "unknown": "غير معروف",
+        "ok": "حسنا",
+        "beta": "نسخة تجريبية",
+        "edit": "تعديل",
+        "delete": "حذف"
     },
     "headings": {
         "addServer": "اضافة خادم",
         "home": "الصفحة الرئيسية",
-        "links": "رابط",
+        "links": "روابط",
         "servers": "خوادم",
         "settings": "الإعدادات",
-        "appearance": "المظهر"
+        "appearance": "المظهر",
+        "playback": "التشغيل",
+        "downloads": "التحميلات"
     },
     "addServer": {
         "address": "عنوان الخادم",
         "validation": {
-            "empty": "$t(addServer.address) لا يمكن ان يكون فاضي",
-            "invalid": "$t(addServer.address)عنوان الخادم غير صحيح",
-            "invalidProduct": "ليست خادم Jellyfin",
-            "noConnection": "لم نتمكن من الوصول الى الخادم"
+            "empty": "لابد من كتابة شيء في $t(addServer.address)",
+            "invalid": "عنوان $t(addServer.address) عنوانا خاطئ",
+            "invalidProduct": "ليس من ضمن خوادم Jellyfin",
+            "noConnection": "فشلت محاولة الاتصال في الخادم"
         }
     },
     "home": {
         "errors": {
             "offline": {
-                "description": "لم نتمكن من الوصول الى خادم Jellyfin.",
-                "heading": "الخادم غير متصل؟"
+                "description": "حدث خطأ اثناء الوصول لخادم Jellyfin.",
+                "heading": "هل الخادم قيد التشغيل؟"
             },
             "invalidServer": {
-                "description": "فيه شي حصل وحفظ معلومات خادم غير صحيحه .جرب تزيل الخادم من الاعدادات وتضيفه من جديد.",
-                "heading": "الخادم غير صحيح"
+                "description": "حدث شيء ما ومعلومات الخادم المحفوظة غير صالحة. حاول إزالة الخادم من الإعدادات وإضافته مرة أخرى.",
+                "heading": "الخادم غير صالح"
             },
             "http": {
-                "description": "عرض خادم Jellyfin خطأ.",
-                "heading": "فيه شي غلط!"
+                "description": "أبلغ تقرير خادم Jellyfin عن خطأ ما.",
+                "heading": "حدث خطأ ما!"
             },
             "504": {
-                "description": "غير قادر للوصول الى خادم Jellyfin بسبب انتهاء الوقت المحدد للاتصال بالخادم."
+                "description": "فشل الاتصال بخادم خالد. يعول السبب عادة إلى انتهاء الوقت المحدد للاتصال بالخادم في أثناء الاتصال بالخادم."
             },
             "502": {
-                "description": "غير قادر للوصول الى خادم Jellyfin عادةً هذا يحصل بسبب اعدادات البروكسي غير صحيحه او Jellyfin نفسه غير متصل."
+                "description": "فشل الاتصال في خادم Jellyfin. يعود السبب -في معظم الأوقات- إلى مشكلة في اعدادات الوكيل proxy، أو أن Jellyfin غير متصل في الشبكة."
             }
         },
         "offline": "لم نتمكن من الوصول الى سيرفر Jellyfin.",
-        "retry": "حاول مرةً اخرى ؟؟",
+        "retry": "هلّ حاولت مجددا؟",
         "errorUrl": "الرابط: {{url}}",
-        "errorCode": "الكود غلط:{{errorCode}}"
+        "errorCode": "رمز الخطأ: {{errorCode}}"
     },
     "settings": {
         "version": "الإصدار: {{version}}",
-        "keepAwake": "ابقاء الشاشة شغالة",
+        "keepAwake": "ابقاء الشاشة فعالة",
         "rotationLock": "قفل دوران الشاشة",
         "expoVersion": "إصدار المعرض: {{version}}",
-        "systemTheme": "استخدم حلة النظام",
-        "lightTheme": "استخدم الحلة الفاتحة"
+        "systemTheme": "مزامنة النظام في الوضع الليلي",
+        "lightTheme": "إيقاف الوضع الليلي",
+        "tabLabels": "إظهار عناوين التبويبات",
+        "fmp4Support": "تفضيل fMP4 في HLS",
+        "minimumServerVersion": "يتطلب إصدار الخادم 10.7+",
+        "nativeVideoPlayer": "استخدم مشغل الفيديو الأصلي"
     },
     "links": {
         "website": "موقع Jellyfin",
-        "documentation": "توثيق",
-        "source": "مصدر الرمز (Source Code)",
+        "documentation": "دليل المستخدم",
+        "source": "الشفرة المصدرية",
         "feature": "طلب خاصية",
-        "issue": "التبليغ عن مشكلة",
+        "issue": "أبلغ عن خطأ",
         "translate": "الترجمة"
     },
     "alerts": {
         "deleteServer": {
             "title": "حذف الخادم",
-            "description": "هل انت متأكد انك تريد حذف الخادم {{serverName}}؟",
+            "description": "هل أنت متيقن من رغبتك في حذف الخادم {{serverName}}؟",
             "confirm": "حذف"
         },
         "resetApplication": {
-            "title": "إعادة تعيين إعدادات التطبيق",
-            "description": "هل انت متأكد انك تريد إعادة تعيين إعدادات التطبيق ؟",
-            "confirm": "إعادة تعيين إعدادات التطبيق"
+            "title": "إعادة تعيين التطبيق",
+            "description": "هل أنت متيقن من رغبتك في إعادة تعيين إعدادات التطبيق؟",
+            "confirm": "إعادة ضبط"
         }
     },
     "serverHelp": {
-        "heading": "ما هو Jellyfin؟"
+        "heading": "ما هو Jellyfin؟",
+        "learnMore": "تعرف إلى المزيد حول كيفية استضافة الخادم الخاص بك",
+        "description": "صُمم Jellyfin من قبل متطوعين، ويعد الحل لعرض الوسائط؛ إذ يوفر لك استضافة الوسائط الخاصة بك والوصول إليها من أي مكان.\n\n\nتحتاج إلى استضافة Jellyfin الخاص بك لاستخدام هذا البرنامج."
     }
 }

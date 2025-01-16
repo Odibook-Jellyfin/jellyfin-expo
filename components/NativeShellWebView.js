@@ -3,6 +3,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
+
 import compareVersions from 'compare-versions';
 import Constants from 'expo-constants';
 import { activateKeepAwake, deactivateKeepAwake } from 'expo-keep-awake';
@@ -13,6 +14,7 @@ import { BackHandler, Platform } from 'react-native';
 
 import MediaTypes from '../constants/MediaTypes';
 import { useStores } from '../hooks/useStores';
+import DownloadModel from '../models/DownloadModel';
 import { getAppName, getDeviceProfile, getSafeDeviceName } from '../utils/Device';
 import StaticScriptLoader from '../utils/StaticScriptLoader';
 import { openBrowser } from '../utils/WebBrowser';
@@ -37,7 +39,9 @@ window.ExpoAppInfo = {
 
 window.ExpoAppSettings = {
 	isPluginSupported: ${isPluginSupported},
-	isNativeVideoPlayerEnabled: ${rootStore.settingStore.isNativeVideoPlayerEnabled}
+	isNativeVideoPlayerEnabled: ${rootStore.settingStore.isNativeVideoPlayerEnabled},
+	isExperimentalNativeAudioPlayerEnabled: ${rootStore.settingStore.isExperimentalNativeAudioPlayerEnabled},
+	isExperimentalDownloadsEnabled: ${rootStore.settingStore.isExperimentalDownloadsEnabled}
 };
 
 window.ExpoVideoProfile = ${JSON.stringify(getDeviceProfile({ enableFmp4: rootStore.settingStore.isFmp4Enabled }))};
@@ -49,6 +53,7 @@ function postExpoEvent(event, data) {
 	}));
 }
 
+${StaticScriptLoader.scripts.NativeAudioPlayer}
 ${StaticScriptLoader.scripts.NativeVideoPlayer}
 
 ${StaticScriptLoader.scripts.NativeShell}
@@ -63,6 +68,10 @@ true;
 		const onRefresh = () => {
 			// Disable pull to refresh when in fullscreen
 			if (rootStore.isFullscreen) return;
+
+			// Stop media playback in native players
+			rootStore.mediaStore.shouldStop = true;
+
 			setIsRefreshing(true);
 			ref.current?.reload();
 			setIsRefreshing(false);
@@ -81,6 +90,22 @@ true;
 					case 'disableFullscreen':
 						rootStore.isFullscreen = false;
 						break;
+					case 'downloadFile':
+						console.log('Download item', data);
+						/* eslint-disable no-case-declarations */
+						const url = new URL(data.item.url);
+						const apiKey = url.searchParams.get('api_key');
+						/* eslint-enable no-case-declarations */
+						rootStore.downloadStore.add(new DownloadModel(
+							data.item.itemId,
+							data.item.serverId,
+							server.urlString,
+							apiKey,
+							data.item.title,
+							data.item.filename,
+							data.item.url
+						));
+						break;
 					case 'openUrl':
 						console.log('Opening browser for external url', data.url);
 						openBrowser(data.url);
@@ -97,15 +122,19 @@ true;
 							deactivateKeepAwake();
 						}
 						break;
+					case 'ExpoAudioPlayer.play':
 					case 'ExpoVideoPlayer.play':
-						rootStore.mediaStore.type = MediaTypes.Video;
+						rootStore.mediaStore.type = event === 'ExpoAudioPlayer.play' ? MediaTypes.Audio : MediaTypes.Video;
 						rootStore.mediaStore.uri = data.url;
-						rootStore.mediaStore.posterUri = data.backdropUrl;
+						rootStore.mediaStore.backdropUri = data.backdropUrl;
+						rootStore.mediaStore.isFinished = false;
 						rootStore.mediaStore.positionTicks = data.playerStartPositionTicks;
 						break;
+					case 'ExpoAudioPlayer.playPause':
 					case 'ExpoVideoPlayer.playPause':
 						rootStore.mediaStore.shouldPlayPause = true;
 						break;
+					case 'ExpoAudioPlayer.stop':
 					case 'ExpoVideoPlayer.stop':
 						rootStore.mediaStore.shouldStop = true;
 						break;

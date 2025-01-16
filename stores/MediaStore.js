@@ -20,6 +20,16 @@ export default class MediaStore {
 	uri
 
 	/**
+	 * Has media playback finished
+	 */
+	isFinished = false
+
+	/**
+	 * Is the media a local file (not streaming media)
+	 */
+	isLocalFile = false
+
+	/**
 	 * Is the media currently playing
 	 */
 	isPlaying = false
@@ -30,9 +40,9 @@ export default class MediaStore {
 	positionTicks = 0
 
 	/**
-	 * The URI of the poster image of the current media item
+	 * The URI of the backdrop image of the current media item
 	 */
-	posterUri
+	backdropUri
 
 	/**
 	 * The player should toggle the play/pause state
@@ -51,9 +61,11 @@ export default class MediaStore {
 	reset() {
 		this.type = null;
 		this.uri = null;
+		this.isFinished = false;
+		this.isLocalFile = false;
 		this.isPlaying = false;
 		this.positionTicks = 0;
-		this.posterUri = null;
+		this.backdropUri = null;
 		this.shouldPlayPause = false;
 		this.shouldStop = false;
 	}
@@ -62,10 +74,12 @@ export default class MediaStore {
 decorate(MediaStore, {
 	type: [ ignore, observable ],
 	uri: [ ignore, observable ],
+	isFinished: [ ignore, observable ],
+	isLocalFile: [ ignore, observable ],
 	isPlaying: [ ignore, observable ],
 	positionTicks: [ ignore, observable ],
 	positionMillis: computed,
-	posterUri: [ ignore, observable ],
+	backdropUri: [ ignore, observable ],
 	shouldPlayPause: [ ignore, observable ],
 	shouldStop: [ ignore, observable ],
 	reset: action

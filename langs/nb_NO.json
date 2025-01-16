@@ -2,7 +2,10 @@
     "common": {
         "cancel": "Avbryt",
         "unknown": "Ukjent",
-        "ok": "OK"
+        "ok": "OK",
+        "beta": "BETA",
+        "edit": "Rediger",
+        "delete": "Slett"
     },
     "headings": {
         "addServer": "Legg til server",
@@ -11,7 +14,8 @@
         "servers": "Servere",
         "settings": "Innstillinger",
         "playback": "Avspilling",
-        "appearance": "Utseende"
+        "appearance": "Utseende",
+        "downloads": "Nedlastinger"
     },
     "addServer": {
         "address": "Serveradresse",
@@ -55,18 +59,19 @@
         "expoVersion": "Expo-versjon: {{version}}",
         "tabLabels": "Vis faneetiketter",
         "lightTheme": "Bruk lyst tema",
-        "systemTheme": "Bruk systemdrakt",
-        "minimumServerVersion": "Krever Tjener Versjon 10.7+",
+        "systemTheme": "Bruk systemtema",
+        "minimumServerVersion": "Krever server versjon 10.7+",
         "fmp4Support": "Foretrekk fMP4 i HLS",
         "nativeVideoPlayer": "Bruk innebygget videospiller"
     },
     "links": {
-        "website": "Nettside",
+        "website": "Jellyfin nettside",
         "documentation": "Dokumentasjon",
         "source": "Kildekode",
         "feature": "Forespør en funksjon",
         "issue": "Rapportér en feil",
-        "translate": "Oversett"
+        "translate": "Oversett",
+        "help": "Få hjelp"
     },
     "alerts": {
         "deleteServer": {

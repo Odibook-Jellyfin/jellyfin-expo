@@ -1,7 +1,9 @@
 /**
+ * Copyright (c) 2025 Jellyfin Contributors
+ *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { observer } from 'mobx-react-lite';
@@ -11,10 +13,12 @@ import { BackHandler, Platform, StyleSheet, View } from 'react-native';
 import { ThemeContext } from 'react-native-elements';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import AudioPlayer from '../components/AudioPlayer';
 import ErrorView from '../components/ErrorView';
 import NativeShellWebView from '../components/NativeShellWebView';
 import VideoPlayer from '../components/VideoPlayer';
 import Colors from '../constants/Colors';
+import MediaTypes from '../constants/MediaTypes';
 import Screens from '../constants/Screens';
 import { useStores } from '../hooks/useStores';
 import { getIconName } from '../utils/Icons';
@@ -56,16 +60,32 @@ const HomeScreen = observer(() => {
 		}, [ webview ])
 	);
 
-	// Report media updates to the video plugin
+	// Report media updates to the audio/video plugin
 	useEffect(() => {
-		webview.current?.injectJavaScript(`window.ExpoVideoPlayer && window.ExpoVideoPlayer._reportStatus(${JSON.stringify({
-			didPlayerCloseManually: rootStore.didPlayerCloseManually,
-			uri: rootStore.mediaStore.uri,
-			isPlaying: rootStore.mediaStore.isPlaying,
-			positionTicks: rootStore.mediaStore.positionTicks,
-			positionMillis: rootStore.mediaStore.positionMillis
-		})});`);
-	}, [ rootStore.mediaStore.uri, rootStore.mediaStore.isPlaying, rootStore.mediaStore.positionTicks ]);
+		if (!rootStore.mediaStore.isLocalFile) {
+			const status = {
+				didPlayerCloseManually: rootStore.didPlayerCloseManually,
+				uri: rootStore.mediaStore.uri,
+				isFinished: rootStore.mediaStore.isFinished,
+				isPlaying: rootStore.mediaStore.isPlaying,
+				positionTicks: rootStore.mediaStore.positionTicks,
+				positionMillis: rootStore.mediaStore.positionMillis
+			};
+
+			if (rootStore.mediaStore.type === MediaTypes.Audio) {
+				webview.current?.injectJavaScript(`window.ExpoAudioPlayer && window.ExpoAudioPlayer._reportStatus(${JSON.stringify(status)});`);
+			} else if (rootStore.mediaStore.type === MediaTypes.Video) {
+				webview.current?.injectJavaScript(`window.ExpoVideoPlayer && window.ExpoVideoPlayer._reportStatus(${JSON.stringify(status)});`);
+			}
+		}
+	}, [
+		rootStore.mediaStore.type,
+		rootStore.mediaStore.uri,
+		rootStore.mediaStore.isFinished,
+		rootStore.mediaStore.isLocalFile,
+		rootStore.mediaStore.isPlaying,
+		rootStore.mediaStore.positionTicks
+	]);
 
 	// Clear the error state when the active server changes
 	useEffect(() => {
@@ -106,10 +126,6 @@ const HomeScreen = observer(() => {
 	const safeAreaEdges = [ 'right', 'left' ];
 	if (Platform.OS !== 'ios' || rootStore.isFullscreen) {
 		safeAreaEdges.push('top');
-	}
-	// Bottom spacer is handled by tab bar except in fullscreen
-	if (rootStore.isFullscreen) {
-		safeAreaEdges.push('bottom');
 	}
 	// Hide webview until loaded
 	const webviewStyle = (isLoading || httpErrorStatus) ? StyleSheet.compose(styles.container, styles.loading) : styles.container;
@@ -186,7 +202,13 @@ const HomeScreen = observer(() => {
 						onLoadEnd={() => {
 							setIsLoading(false);
 						}}
+						// Reload the webview if the process terminated in the background
+						// refs: https://github.com/react-native-webview/react-native-webview/blob/1d8205af06dbb0bad0d8f208bb2a37ce5f732fd3/docs/Reference.md#oncontentprocessdidterminate
+						onContentProcessDidTerminate={() => {
+							webview.current?.reload();
+						}}
 					/>
+					<AudioPlayer/>
 					<VideoPlayer/>
 				</>
 			) : (
